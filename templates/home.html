@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    {% include "hero.html" %}
+
+    <a name="about"></a>
+    <div class="flex flex-col-reverse items-stretch px-[25px] lg:px-[50px] mt-16 md:mt-0 strip md:flex-row gap-8">
+        <div class="md:w-1/2">
+            <img src="{% static 'media/2nd Image.png' %}" class="h-full w-full object-contain object-center" />
+        </div>
+
+		<div class="md:w-1/2 bg-[#DBD6E9F0] flex px-12 flex-col border border-black rounded-xl p-4 justify-evenly" style="
+			box-shadow: 
+				-7px -6px 20px 0px #0000000D,
+				-27px -23px 36px 0px #0000000A,
+				-62px -51px 48px 0px #00000008,
+				-110px -90px 57px 0px #00000003,
+				-172px -141px 62px 0px #00000000;
+				border: 3px solid #FFF1F1
+			">
+			<div class="">
+				<h1 class="text-[2.5rem] text-left font-poppins text-primary-content font-extrabold">About Us</h1>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo excepturi quae ut ducimus reprehenderit tenetur assumenda necessitatibus unde aliquam quo.
+				</p>
+			</div>
+	
+			<div class="mt-6">
+				<h1 class="text-2xl font-poppins text-primary-content font-bold ">Our Mission</h1>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam cum assumenda repellendus commodi ad laudantium, quis aspernatur repudiandae eligendi neque?
+				</p>
+			</div>
+	
+			<div class="mt-6">
+				<h1 class="text-2xl font-poppins text-primary-content font-bold">Our Vission</h1>
+				<p>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis veritatis doloremque eos maxime aperiam aliquam numquam aliquid et debitis culpa.
+				</p>
+			</div>
+		</div>
+    </div>
+    
+
+    <div class="px-[25px] lg:px-[50px] mt-16">
+
+        <a name="services"></a>
+		<div class="services rounded-[30px] md:rounded-[241px] py-8 md:px-16">
+			<h1 class="text-center font-poppins text-2xl md:text-4xl font-semibold text-white">Services Offered</h1>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 sm:p-12 md:p-16 ">
+                
+                
+                <div class="service-card">
+                    <div class="w-20 h-20">
+                        <img class="w-full h-full object-contain" src="{% static 'media/10659374 1.png' %}" alt="Computer Vision"/>
+                    </div>
+                    <h4 class="text-xl font-bold">Computer Vision</h4>
+                    <p class="text-sm text-center line-clamp-3	">
+                    Unlock the power of sight with our expert computer vision solutions.
+                    We help you leverage the latest advancements in AI...
+                    </p>
+                    <button onclick="ShowDialog('Unlock the power of sight with our expert computer vision solutions. We help you leverage the latest advancements in AI to analyze images and videos, extracting valuable insights and automating complex processes.')">learn more...</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="w-20 h-20">
+                        <img class="w-full h-full object-contain" src="{% static 'media/9895117 1.png' %}" alt="Computer Vision"/>
+                    </div>
+                    <h4 class="text-xl font-bold">Machine Learning</h4>
+                    <p class="text-sm text-center line-clamp-3	">
+                        We understand the challenges of data collection, preparation, and
+                        model training. Our team of machine learning experts is here to help...
+                    </p>
+                    <button onclick="ShowDialog('We understand the challenges of data collection, preparation, and model training. Our team of machine learning experts is here to help you build powerful models that deliver real results.')">learn more...</button>
+                </div>
+
+
+                <div class="service-card">
+                    <div class="w-20 h-20">
+                        <img class="w-full h-full object-contain" src="{% static 'media/348788 1.png' %}" alt="Computer Vision"/>
+                    </div>
+                    <h4 class="text-xl font-bold">Data Analytics</h4>
+                    <p class="text-sm text-center line-clamp-3	">
+                        Our team of data analysts are here to help you unlock the potential
+				        of your data and make smarter, data-driven decisions. We'll guide...
+                    </p>
+                    <button onclick="ShowDialog('Our team of data analysts are here to help you unlock the potential of your data and make smarter, data-driven decisions. We\'ll guide you through the entire data analytics process, from initial data exploration to actionable recommendations.')">learn more...</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="w-20 h-20">
+                        <img class="w-full h-full object-contain" src="{% static 'media/6533086 1.png' %}" alt="Computer Vision"/>
+                    </div>
+                    <h4 class="text-xl font-bold">NLP Engineering</h4>
+                    <p class="text-sm text-center line-clamp-3	">
+                        Need to understand and interact with human language in a meaningful
+				        way? Our team of NLP engineers are experts in building systems that...
+                    </p>
+                    <button onclick="ShowDialog('Need to understand and interact with human language in a meaningful way? Our team of NLP engineers are experts in building systems that can comprehend, analyze, and generate natural language, bridging the gap between humans and computers.')">learn more...</button>
+                </div>
+
+
+                <div class="service-card">
+                    <div class="w-20 h-20">
+                        <img class="w-full h-full object-contain" src="{% static 'media/26815 1.png' %}" alt="Computer Vision"/>
+                    </div>
+                    <h4 class="text-xl font-bold">Web Development</h4>
+                    <p class="text-sm text-center line-clamp-3	">
+                        Web development refers to the process of creating, building, and maintaining websites and web applications. Share your...
+                    </p>
+                    <button onclick="ShowDialog('Web development refers to the process of creating, building, and maintaining websites and web applications. Share your requirements with our Web Development team and relax!')">learn more...</button>
+                </div>
+
+
+                <div class="service-card">
+                    <div class="w-20 h-20">
+                        <img class="w-full h-full object-contain" src="{% static 'media/26815 2.png' %}" alt="Computer Vision"/>
+                    </div>
+                    <h4 class="text-xl font-bold">App Development</h4>
+                    <p class="text-sm text-center line-clamp-3	">
+                        Have a brilliant app idea waiting to be unleashed? We're your trusted partner in bringing your vision to life, developing...
+                    </p>
+                    <button onclick="ShowDialog('Have a brilliant app idea waiting to be unleashed? We\'re your trusted partner in bringing your vision to life, developing high-quality mobile applications that engage users and drive results.')">learn more...</button>
+                </div>
+		
+		
+			</div>
+		</div>
+        
+        <div class="mt-16">
+            <p class="font-poppins font-medium text-center tracking-wide text-2xl md:text-4xl">Transforming your vision into reality, we create websites that not only meet your needs but also inspire and engage your audience. </p>
+            <div class="mt-12 text-center flex gap-8 items-center justify-center md:flex-row flex-col">
+                <div class="relative border sm:inline-block border-black rounded-xl overflow-hidden sm:w-52 h-32 sm:h-52">
+                    <span class="absolute top-2 border border-white right-2 bg-black rounded-full h-4 w-4 z-10"></span>
+                    <div class="flex sm:flex-col-reverse ms-auto rounded-s-xl sm:rounded-s-none p-4 bg-[#65459C] max-w-[80%] sm:h-[75%] h-full sm:max-w-none sm:rounded-b-xl items-center gap-4 ">
+                        <div class="h-20 w-20 relative -left-14 sm:-left-0 sm:top-14 rounded-full overflow-hidden border-[2px] border-white ring-1 shrink-0 ring-[#2B345F]">
+                            <img src="{% static 'media/customers.jpeg' %}" class="h-full w-full object-cover object-center border-[1.5px] rounded-full border-[#65459C]"/>
+                        </div>
+                        <div class="sm:relative sm:top-10">
+                            <h1 class="text-lg font-bold text-white">
+                                15+ Happy <br class="hidden sm:block"> Customers
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="relative border sm:inline-block border-black rounded-xl overflow-hidden sm:w-52 h-32 sm:h-52">
+                    <span class="absolute top-2 border border-white right-2 bg-black rounded-full h-4 w-4 z-10"></span>
+                    <div class="flex sm:flex-col-reverse ms-auto rounded-s-xl sm:rounded-s-none p-4 bg-[#65459C] max-w-[80%] sm:h-[75%] h-full sm:max-w-none sm:rounded-b-xl items-center gap-4 ">
+                        <div class="h-20 w-20 relative -left-14 sm:-left-0 sm:top-14 rounded-full overflow-hidden border-[2px] border-white ring-1 shrink-0 ring-[#2B345F]">
+                            <img src="{% static 'media/projects.jpeg' %}" class="h-full w-full object-cover object-center border-[1.5px] rounded-full border-[#65459C]"/>
+                        </div>
+                        <div class="sm:relative sm:top-10">
+                            <h1 class="text-lg font-bold text-white">
+                                20+ Projects <br class="hidden sm:block"> Completed
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative border sm:inline-block border-black rounded-xl overflow-hidden sm:w-52 h-32 sm:h-52">
+                    <span class="absolute top-2 border border-white right-2 bg-black rounded-full h-4 w-4 z-10"></span>
+                    <div class="flex sm:flex-col-reverse ms-auto rounded-s-xl sm:rounded-s-none p-4 bg-[#65459C] max-w-[80%] sm:h-[75%] h-full sm:max-w-none sm:rounded-b-xl items-center gap-4 ">
+                        <div class="h-20 w-20 relative -left-14 sm:-left-0 sm:top-14 rounded-full overflow-hidden border-[2px] border-white ring-1 shrink-0 ring-[#2B345F]">
+                            <img src="{% static 'media/members.jpeg' %}" class="h-full w-full object-cover object-center border-[1.5px] rounded-full border-[#65459C]"/>
+                        </div>
+                        <div class="sm:relative sm:top-10">
+                            <h1 class="text-lg font-bold text-white">
+                                10+ Passionate <br class="hidden sm:block"> Members
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% include "testimonials.html" %}
+        {% include "Contact.html" %}
+
+
+	</div>
+
+
+
+{% endblock %}

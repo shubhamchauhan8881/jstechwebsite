@@ -1,0 +1,36 @@
+{% load static %}
+<div class="flex items-center flex-col md:flex-row mt-12 md:section md:mt-0 px-[25px] lg:px-[50px]">
+
+    <div class="md:w-1/2">
+        <h1 class="text-4xl md:text-5xl font-roboto font-semibold tracking-widest text-left bg-gradient-to-r from-[#091133] to-[#4F5B93] bg-clip-text text-transparent">
+            Unlocking the <br />Power of <br />Tomorrow</h1>
+
+        <p class="text-xl font-semibold font-poppins text-primary-content mt-8">
+            Symbol of Excellence and Perfection.
+        </p>
+
+        <p class="text-primary-content mt-2">
+            We are a small team of talented professionals with a wide range of
+            skills and experience. We love what we do, and we do it with passion.
+            We look forward to working with you.
+        </p>
+
+        <div class="my-12 grid  grid-cols-2 gap-4">
+            <button class="font-semibold text-xl border rounded-full p-2 border-black">
+                About us
+            </button>
+
+            <button class="font-semibold text-xl border rounded-full p-2 bg-[#8D7AC04A] border-black">
+                <a href="#services" class="block">
+                    Services
+                </a>
+            </button>
+        </div>
+    </div>
+
+    <div class="md:w-1/2">
+        <div class="shrink-0 overflow-hidden h-full w-full">
+            <img src="{% static 'media/Hero Image For Use.png' %}" class="h-full w-full object-contain object-center" />
+        </div>
+    </div>
+</div>

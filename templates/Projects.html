@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="mt-16 px-[25px] lg:px-[50px]">
+    <div class="text-center">
+        <h3 class=" text-5xl font-extrabold uppercase text-[#2B345F]">Our Projects</h3>
+        <p class="text-md mt-4 font-poppins max-w-screen-lg mx-auto">
+            Welcome to my portfolio! Here, you'll find a showcase of my latest projects, where creativity meets innovation. From [briefly mention project types, e.g., graphic design, web development, art installations, each piece reflects my passion and dedication. Dive in to explore, get inspired, and connect with my work!
+        </p>
+    </div>
+</div>
+
+<div class="flex flex-col gap-16 s mt-16">
+    {% for project  in projects %}
+        <div class="bg-[#5E4392] py-20 flex justify-between items-stretch gap-20">
+            <div class="text-white flex flex-col justify-start items-start gap-4">
+            <h1 class="text-2xl lg:text-5xl font-bold uppercase">{{project.name}}</h1>
+            <div class="grow max-h-[20rem] lg:hidden shrink-0 w-full rounded-3xl overflow-hidden max-w-lg">
+                <img src="{{ project.image.url }}" class="h-full w-full object-cover"/>
+            </div>
+            <!-- <p class="text-3xl">Project Description</p> -->
+            <p>{{project.description}}</p>
+            <button class="bg-[#977CCA] mt-4 py-2 px-6 rounded-md">View Project</button>
+            </div>
+            <div class="hidden lg:block grow max-h-[374px] shrink-0 rounded-3xl overflow-hidden max-w-lg">
+            <img src="{{ project.image.url }}" class="h-full w-full object-cover"/>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+
+
+
+{% endblock %}

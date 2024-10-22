@@ -1,0 +1,48 @@
+<div class="max-w-lg mx-auto bg-white opacity-1 mt-16" style="height: auto">
+    <h1 class="text-center text-2xl font-poppins font-semibold">
+    Contact Us
+    </h1>
+    <p class="text-center font-poppins pb-4 my-4 border-b-2 border-b-[#956BDD]/70">
+    Please fill this form in a decent <br /> manner
+    </p>
+    <div class="mt-6">
+    <form class="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-4" method="post" action="/">
+
+        {% csrf_token %}
+        {% for field in contact_form %}
+            <div class="{% if field.label == 'Message' %} sm:col-span-2 {% endif %}">
+                {{ field.label_tag }}
+                {{ field }}
+                {{ field.errors }}
+            </div>
+        {% endfor %}
+
+        <div class="form-input-wrapper col-span-1 sm:col-span-2">
+            <input type="checkbox" id="consent" required/>
+            <label for="consent">
+                I hereby authorize JS Technova to contact me via telephone or email for callback purposes at the details provided.
+            </label>
+        </div>
+        <!-- Submit Button -->
+        <div class="text-center sm:col-span-2 mt-4">
+        <button
+            class="hero-btn  bg-[#8D7AC04A] px-12 py-3 rounded-full font-semibold"
+            style="
+            background: #8d7ac04a;
+            border: 1px solid;
+            border-image-source: linear-gradient(
+                92.66deg,
+                #ffffff 0.2%,
+                #999999 64.1%
+            );
+            box-shadow: -2px 5px 11px 0px #00000026,
+                -9px 19px 21px 0px #00000021, -21px 42px 28px 0px #00000014,
+                -37px 75px 33px 0px #00000005, -58px 117px 37px 0px #00000000;
+            "
+        >
+            Submit
+        </button>
+        </div>
+    </form>
+    </div>
+</div>

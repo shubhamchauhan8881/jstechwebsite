@@ -14,20 +14,17 @@
 
   <!-- Post section  -->
   <div>
-    {% for blog in blogs %}
     <div class="w-10/12 mx-auto space-y-6 my-8">
-      <!-- post-1  -->
-      <div class=" my-shadow w-full rounded-2xl mb-16  bg-cover bg-center bg-no-repeat min-h-[300px] sm:min-h-[400px] md:min-h-[500px] relative" style="background-image: url({{blog.image.url}}); background-size: contain;">
-        <div class="w-full rounded-b-2xl min-h-[80px] absolute bottom-0 left-0 bg-black bg-opacity-50 flex flex-col justify-center items-start p-4 box-border">
-          <p class="text-xl text-white">{{blog.title}}</p>
-          <p class="text-sm text-gray-200 mt-2 description">{{blog.content}}</p>
-          <!-- <span class="show-more">Read More</span> -->
+      {% for blog in blogs %}
+        <div class=" my-shadow w-full rounded-2xl mb-16  bg-cover bg-center bg-no-repeat min-h-[300px] sm:min-h-[400px] md:min-h-[500px] relative" style="background-image: url({{blog.image.url}});">
+          <div class="w-full rounded-b-2xl min-h-[80px] absolute bottom-0 left-0 bg-black bg-opacity-50 flex flex-col justify-center items-start p-4 box-border">
+            <p class="text-xl text-white">{{blog.title}}</p>
+            <p class="text-sm text-gray-200 mt-2 description">{{blog.content}}</p>
+            <!-- <span class="show-more">Read More</span> -->
+          </div>
         </div>
-      </div>
-
-     
+      {% endfor %}
     </div>
-    {% endfor %}
 
   </div>
 

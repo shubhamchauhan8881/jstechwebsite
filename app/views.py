@@ -31,7 +31,8 @@ class ContactUsView(View):
     
 class BlogsView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'blogs.html')
+        blogs = models.Blogs.objects.filter(is_published=True)
+        return render(request, 'blogs.html', {'blogs':blogs})
 
 def GetPage(request, page_name):
     return render(request, f"components/{page_name}.html")

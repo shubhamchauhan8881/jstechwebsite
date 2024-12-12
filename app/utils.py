@@ -5,9 +5,6 @@ from .models import TelegramClients
 
 BASE_URL = "https://api.telegram.org/bot"
 
-TELEGRAM_BOT_KEY = "7125524764:AAFcfCqdI8RVhbwxqpkmHOD24QWXKK18A1E"
-
-
 async def _make_request(url,data):
     requests.post(
         url, 
@@ -29,7 +26,7 @@ Sender Details
     try:
         action = "sendMessage"
         # url = "https://api.telegram.org/bot<token>/sendMessage"
-        url = BASE_URL + TELEGRAM_BOT_KEY + "/" + action
+        url = BASE_URL + os.environ[TELEGRAM_BOT_KEY] + "/" + action
         data = {
             "text": MESSAGE_TEMPLATE,
             "parse_mode": "MarkdownV2",

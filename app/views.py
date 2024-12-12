@@ -4,10 +4,23 @@ from django.views import View
 from . import forms
 from django.contrib import messages
 from . import models
+from .utils import send as sendTelegramMessage
+
+SERVICES = {
+    "webd":"Website Developement",
+    "webr":"Website Redesign",
+    "appd":"App Developement",
+    "dataA": "Data Analysis",
+    "cv": "Computer Vision",
+    "ml":"Machine Learning",
+    "nlp": "NLP Engineering",
+}
 
 class HomeView(View):
+    # sendTelegramMessage("hello ", "Shubham","8881868541", "asdad@gmail.com", telegram_clients)
     def get(self, request, *args, **kwargs):
-        testimonials = models.Testimonial.objects.all()
+
+        testimonials = models.Testimonial.objects.filter(display=True)
         contact_form = forms.ContactForm()
         return render(request, 'home.html', {"contact_form":contact_form, "testimonials":testimonials})
 
@@ -15,7 +28,14 @@ class HomeView(View):
         f = forms.ContactForm(request.POST)
         if f.is_valid():
             if f.save():
-                messages.success(request, "Form saved successfully. We will contact you soon.")
+                messages.success(request, "Form saved successfully. We will contact you soon.", )
+                sendTelegramMessage(
+                    header="New Contact Form filled",
+                    body=f"Service type: { SERVICES[f.cleaned_data['service_type']]}", 
+                    sender_email=f.cleaned_data["email"], 
+                    sender_name=f.cleaned_data["name"], 
+                    sender_phone=f.cleaned_data["phone"]
+                )
             else:
                 messages.error(request, "Failed to save. Please try again")
             return redirect( request.META.get("HTTP_REFERER") )
@@ -54,7 +74,8 @@ class FeedbackView(View):
                 message = message
             )
             messages.success(request, f"Thank you {name} for your valuable feedback. It's truly appreciated and will help me improve!")
-            return  redirect('feedback')
+            sendTelegramMessage(header="A New Feedback",body=message,sender_name=name,sender_phone= rating, sender_email= email)
+            return redirect('feedback')
             
     
 class CareersView(View):

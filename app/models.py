@@ -16,7 +16,7 @@ class UserQuery(models.Model):
         ("nlp", "NLP Engineering"),
 
         ])
-    message = models.CharField(max_length=500)
+    message = models.CharField(max_length=1500)
 
     def __str__(self):
         return self.name + ' ' + self.phone
@@ -40,7 +40,7 @@ class Blogs(models.Model):
 
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to="media/blogs", null=True, blank=True)
-    content = models.TextField(max_length=1500)
+    content = models.TextField(max_length=10000)
 
     def __str__(self):
         return self.title
@@ -48,9 +48,9 @@ class Blogs(models.Model):
 class Testimonial(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=40)
-    message = models.CharField(max_length=150)
+    message = models.CharField(max_length=1000)
     image = models.ImageField(upload_to="media/testimonial")
-
+    display = models.BooleanField(default=False)
     url = models.URLField(blank=True, null=True)
 
 
@@ -68,8 +68,22 @@ class Projects(models.Model):
 
     name = models.CharField(max_length=50)
     url = models.URLField(blank=True, null=True)
-    description = models.CharField(max_length=200)
+    description = models.CharField(max_length=600)
     image = models.ImageField(upload_to="media/projects")
 
+    def __str__(self):
+        return self.name
+
+
+class TelegramClients(models.Model):
+    name = models.CharField(max_length= 100)
+    chat_id = models.CharField(max_length= 50)
+
+    class Meta:
+        verbose_name = 'telegram client'
+
+    @staticmethod
+    def all():
+        return TelegramClients.objects.all()
     def __str__(self):
         return self.name

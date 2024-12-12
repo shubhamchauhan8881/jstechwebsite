@@ -1,5 +1,6 @@
 {% load static %}
-<header class="sticky flex bg-white top-0 w-full z-20 items-center justify-between px-[25px] lg:px-[50px] py-4 shadow-sm">
+<header
+  class="sticky flex bg-white top-0 w-full z-20 items-center justify-between px-[25px] lg:px-[50px] py-4 shadow-sm">
   <a href="/">
     <div class="inline-flex items-center justify-start gap-2">
       <div class="w-12">
@@ -19,9 +20,18 @@
     class="absolute md:static md:block hidden peer-hover/nav:block hover:block left-[25px] right-[25px] top-0 pt-16 md:pt-0">
     <div class="bg-purple-200 md:bg-transparent md:shadow-none p-8 md:p-0 shadow-md rounded">
       <ul class="flex flex-col md:flex-row gap-2">
-        <li><a href="/blogs" class="block px-4 py-0.5 rounded-[10px] hover:nav-active {% if 'blogs' in request.path %} nav-active {% endif %}">Blogs</a></li>
-        <li><a href="/projects" class="block px-4 py-0.5 rounded-[10px] hover:nav-active {% if 'projects' in request.path %} nav-active {% endif %}">Projects</a></li>
-        <li><a href="/careers" class="block px-4 py-0.5 rounded-[10px] hover:nav-active {% if 'careers' in request.path %} nav-active {% endif %}">Careers</a></li>
+        <li><a href="/blogs"
+            class="block px-4 py-0.5 rounded-[10px] hover:nav-active {% if 'blogs' in request.path %} nav-active {% endif %}">Blogs</a>
+        </li>
+        <li><a href="/projects"
+            class="block px-4 py-0.5 rounded-[10px] hover:nav-active {% if 'projects' in request.path %} nav-active {% endif %}">Projects</a>
+        </li>
+        <li><a href="/careers"
+            class="block px-4 py-0.5 rounded-[10px] hover:nav-active {% if 'careers' in request.path %} nav-active {% endif %}">Careers</a>
+        </li>
+        <li><a href="/events"
+            class="block px-4 py-0.5 rounded-[10px] hover:nav-active {% if 'events' in request.path %} nav-active {% endif %}">Events</a>
+        </li>
         <li><a href="/team" class="block px-4 py-0.5 rounded-[10px] hover:nav-active">Our Team</a></li>
         <li><a href="/#contact" class="block px-4 py-0.5 rounded-[10px] hover:nav-active">Contact</a></li>
 

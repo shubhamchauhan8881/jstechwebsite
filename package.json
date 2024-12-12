@@ -1,0 +1,23 @@
+{
+  "name": "jstechnova",
+  "version": "1.0.0",
+  "description": "official website",
+  "scripts": {
+    "css": "npx tailwindcss -i ./static/css/input.css -o ./static/css/main.css --watch"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubhamchauhan8881/JsTechNova.git"
+  },
+  "author": "JsTechNova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shubhamchauhan8881/JsTechNova/issues"
+  },
+  "homepage": "https://github.com/shubhamchauhan8881/JsTechNova#readme",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.9",
+    "tailwindcss": "^3.4.13"
+  }
+}

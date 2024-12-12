@@ -16,20 +16,20 @@
     {% for project  in projects %}
         <div class="bg-[#5E4392] py-20 flex justify-between items-stretch gap-20">
             <div class="text-white flex flex-col justify-start items-start gap-4">
-            <h1 class="text-2xl lg:text-5xl font-bold uppercase">{{project.name}}</h1>
-            <div class="grow max-h-[20rem] lg:hidden shrink-0 w-full rounded-3xl overflow-hidden max-w-lg">
-                <img src="{{ project.image.url }}" class="h-full w-full object-cover"/>
-            </div>
+                <h1 class="text-2xl lg:text-5xl font-bold uppercase">{{project.name}}</h1>
+                <div class="grow max-h-[20rem] lg:hidden shrink-0 w-full rounded-3xl overflow-hidden max-w-lg">
+                    <img src="{{ project.image.url }}" class="h-full w-full object-cover"/>
+                </div>
             <!-- <p class="text-3xl">Project Description</p> -->
-            <p>{{project.description}}</p>
-            {% if project.url %}
-                <a href="{{project.url}}">
-                    <button class="bg-[#977CCA] mt-4 py-2 px-6 rounded-md">View Project</button>
-                </a>
-            {% endif %}
+                <p>{{project.description}}</p>
+                {% if project.url %}
+                    <a href="{{project.url}}">
+                        <button class="bg-[#977CCA] mt-4 py-2 px-6 rounded-md">View Project</button>
+                    </a>
+                {% endif %}
             </div>
             <div class="hidden lg:block grow max-h-[374px] shrink-0 rounded-3xl overflow-hidden max-w-lg">
-            <img src="{{ project.image.url }}" class="h-full w-full object-cover"/>
+                <img src="{{ project.image.url }}" class="h-full w-full object-cover"/>
             </div>
         </div>
     {% endfor %}
